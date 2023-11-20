@@ -1,0 +1,25 @@
+<!-- TODO: java did not delete the files back when convert txt to pdf -->
+<!-- TODO: input should check for pdf/txt for respective mode -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="fileForm" enctype="multipart/form-data">
+      <div>
+        <input type="radio" name="converttype" value="1" id="type1" />
+        <label for="type1">Convert PDF to TXT</label>
+        <input type="radio" name="converttype" value="2" id="type2" />
+        <label for="type2">Convert TXT to PDF</label>
+      </div>
+
+      <input type="file" multiple name="file" id="file" />
+      <input type="button" name="submit" value="Upload" id="submit" />
+    </form>
+  </body>
+  <script src="script.js"></script>
+</html>
