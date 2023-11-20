@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    image: cat201:latest
+    container_name: cat201
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ${PWD}:/var/www/html
