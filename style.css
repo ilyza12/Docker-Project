@@ -1,0 +1,4 @@
+#outputlinks {
+  display: flex;
+  flex-direction: column;
+}

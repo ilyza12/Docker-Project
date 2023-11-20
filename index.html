@@ -6,7 +6,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PDF/Txt Converter</title>
+    <!-- rel to style.css -->
+    <link type="text/css" rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form id="fileForm" enctype="multipart/form-data">
@@ -20,6 +22,10 @@
       <input type="file" multiple name="file" id="file" />
       <input type="button" name="submit" value="Upload" id="submit" />
     </form>
+
+    <!-- section to show all the links -->
+    <div id="outputlinks"></div>
   </body>
+  <!-- script for functionalities -->
   <script src="script.js"></script>
 </html>
