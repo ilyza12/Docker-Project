@@ -19,7 +19,7 @@ docker-compose up -d
 ```bash
 docker ps
 ```
-5. Open your browser and navigate to (http://localhost:8080)[http://localhost:8080] to see the website.
+5. Open your browser and navigate to http://localhost:8080 to see the website.
 6. Finally, to stop the running container, you can run this command.
 ```bash
 docker-compose down
