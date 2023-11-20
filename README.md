@@ -37,8 +37,5 @@ docker-compose down
 ├── files
 │   ├── export
 │   └── import
-├── index.php
-└── samples
-    ├── CAT201_ASSIGNMENT 1_REFERENCES.pdf
-    └── CAT201_Video_Links.pdf
+└── index.php
 ```
