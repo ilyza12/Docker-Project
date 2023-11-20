@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="fileForm" enctype="multipart/form-data">
+      <input type="file" multiple name="file" id="file" />
+      <input type="button" name="submit" value="Upload" id="submit" />
+    </form>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var form = document.getElementById("fileForm");
+      var fileInput = document.getElementById("file");
+      var submitButton = document.getElementById("submit");
+
+      submitButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        var file = fileInput.files;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/pdftotext.php", true);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            // Handle the response if needed
+            console.log(xhr.responseText);
+          }
+        };
+
+        var formData = new FormData();
+        for (var i = 0; i < file.length; i++) {
+          formData.append("files[]", file[i]);
+        }
+        console.log(formData.getAll("files[]"));
+
+        xhr.send(formData);
+      });
+    });
+  </script>
+</html>
