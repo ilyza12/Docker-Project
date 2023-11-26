@@ -15,9 +15,13 @@ ENV JAVA_HOME /usr/lib/jvm/default-java
 ENV PATH $JAVA_HOME/bin:$PATH
 
 
+# Create export folder
+RUN mkdir -p /var/www/html/files/export 
+
+
 # Copy the contents of the current directory into the container
 COPY . /var/www/html/
 
 
 # Set full access permissions
-RUN chmod 777 /var/www/html/files/import/ /var/www/html/files/import
+RUN chmod 777 /var/www/html/files/export /var/www/html/files/import
