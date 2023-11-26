@@ -20,4 +20,4 @@ COPY . /var/www/html/
 
 
 # Set full access permissions
-RUN chmod 777 /var/www/html/files/import/ /var/www/html/files/import/
+RUN chmod 777 /var/www/html/files/import/ /var/www/html/files/import
