@@ -27,6 +27,9 @@ function startConvert(e) {
     if(convertmode === 'pdf' ) alert("Please select only pdf files");
     else alert("Please select only txt files");
     return;
+  }else{
+    if(convertmode === 'pdf' && fileFormats[0] !== 'pdf') return alert("Please select only pdf files");
+    if(convertmode === 'txt' && fileFormats[0] !== 'txt') return alert("Please select only txt files");
   }
 
   let xhr = new XMLHttpRequest();
