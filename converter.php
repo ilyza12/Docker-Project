@@ -36,7 +36,7 @@
             }
     
             // run java program to pdftxtconverter.jar
-            if($convermode == 1) {
+            if($convermode == 'pdf') {
                 $command = escapeshellcmd('java -jar PdfTxtConverter.jar');
             }else {
                 $command = escapeshellcmd('java -jar TxtPdfConverter.jar');
