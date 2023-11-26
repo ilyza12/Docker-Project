@@ -21,14 +21,12 @@ function startConvert(e) {
     return;
   }
 
-  // check if file is pdf or txt (depending on convertmode)
-  for (let i = 0; i < file.length; i++) {
-    const fileformat = file[i].name.split(".").pop();
-    if (convertmode === "1" && fileformat !== "pdf") {
-      return alert("Please select a pdf file");
-    } else {
-      return alert("Please select a txt file");
-    }
+  // check if one of the file is not the same format as the other
+  const fileFormats = [...file].map((file) => file.name.split(".").pop());
+  if (fileFormats.some((format) => format !== fileFormats[0])) {
+    if(convertmode === 'pdf' ) alert("Please select only pdf files");
+    else alert("Please select only txt files");
+    return;
   }
 
   let xhr = new XMLHttpRequest();
