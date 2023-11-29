@@ -2,3 +2,79 @@
   display: flex;
   flex-direction: column;
 }
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('img5.jpg') no-repeat;
+  /*background: #546bbe;*/
+  backdrop-filter: blur(5px);
+  background-size: cover;
+  background-position: center;
+}
+
+.box {
+  width: 420px;
+  background: rgba(157, 181, 192, 0.418);
+  border: 3px solid rgba(255,255,255,1);
+  color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.box h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+
+}
+
+.box .checkbox {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: -15px o 15px;
+  margin-top: 20px;
+}
+
+input[type="radio"]{
+  margin-left: 10px;
+  margin-right: 5px;
+
+}
+
+input[type="file"]{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="button"] {
+  background-color: rgba(255,255,255,1); /* Blue background color */
+  color: #333; /* White text color */
+  padding: 10px 15px; /* Padding around the button */
+  border: 1px solid rgba(255,255,255,.3); /* Remove border */
+  border-radius: 50px; /* Rounded corners */
+  margin: 20px 20px;
+  width: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
