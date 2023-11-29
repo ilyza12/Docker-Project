@@ -16,9 +16,6 @@
     <h1>File Converter</h1>
     <form id="fileForm" enctype="multipart/form-data">
       <div class="checkbox">
-        <!-- <div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-          <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        </div> -->
         <label for="type1" class = "radiocontainer transition">
           <input type="radio" name="converttype" value="pdf" id="type1" checked/>
           <p>Convert PDF to TXT</p>
@@ -29,14 +26,6 @@
         </label>
       </div>
 
-      <!-- <div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-        <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
-      </div>
-      <div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-          <input checked id="bordered-radio-2" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="bordered-radio-2" class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked state</label>
-      </div> -->
 
       <div id = "file-upload-container">
         <label for="dropzone-file" id = "dropzone-label" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
@@ -54,14 +43,8 @@
     </form>
 
 
-    <div id = "filenames">
-      <div class = "uploads">
-        <p data-filename = "testingawdjnawdjknaw danwdj knawdjk nwa.pdf">testing.pdf</p>
-        <button title = "remove file" class = "transition">x</button>
-      </div>
-    </div>
-    <!-- section to show all the links -->
-    <div id="outputlinks"></div>
+    <!-- section to show the files -->
+    <div id = "filenames"></div>
   </body>
   <!-- script for functionalities -->
   <script src="script.js"></script>
