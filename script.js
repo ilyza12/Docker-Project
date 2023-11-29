@@ -42,7 +42,7 @@ function removeFile(filename) {
   const dataTransfer = new DataTransfer();
   filteredFiles.forEach((file) => dataTransfer.items.add(file));
   fileinput.files = dataTransfer.files;
-  const container = document.querySelector(`[data-filename="${filename}"]`).parentElement;
+  const container = document.querySelector(`[data-filename="${filename}"]`);
   container.remove();
 }
 
@@ -148,9 +148,6 @@ function logReponse(xhr) {
     filenamediv.lastChild.remove();
     // add the link to the div
     filenamediv.appendChild(link);
-
-    // const output = document.getElementById("outputlinks");
-    // output.appendChild(link);
   });
 
   // alert user that conversion is done
