@@ -4,7 +4,7 @@
 }
 
 * {
-  margin:0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -15,61 +15,165 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('img5.jpg') no-repeat;
+  background: url("img5.jpg") no-repeat;
   /*background: #546bbe;*/
   backdrop-filter: blur(5px);
   background-size: cover;
   background-position: center;
 }
 
+/* general classes */
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow,
+    transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color,
+    -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* general classes */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .box {
-  width: 420px;
-  background: rgba(157, 181, 192, 0.418);
-  border: 3px solid rgba(255,255,255,1);
-  color: white;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 30rem;
+  background: rgba(248, 248, 248);
+  border: 3px solid rgba(255, 255, 255, 1);
+  color: #333;
+  border-radius: 5px;
   padding: 20px 30px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .box h1 {
-  font-size: 36px;
-  text-align: center;
-  color: #fff;
-
+  font-size: 1.25rem;
 }
 
 .box .checkbox {
   display: flex;
-  justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  margin: -15px o 15px;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0px;
+  /* background: pink; */
+  width: 100%;
 }
 
-input[type="radio"]{
-  margin-left: 10px;
-  margin-right: 5px;
-
+.toast {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  top: 10px;
+  padding: 10px 20px;
+  background: #f3f4f6;
+  color: #0042c7;
+  border-radius: 5px;
+  z-index: 1000;
 }
 
-input[type="file"]{
+#loadingsvg {
+  width: 15px;
+  height: 15px;
+  color: #e5e7eb;
+  fill: #0042c7;
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radiocontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cecdcd;
+  border-radius: 0.25rem;
+  gap: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.radiocontainer:hover {
+  background-color: #2767e9;
+  color: white;
+}
+
+.radiocontainer p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  cursor: inherit;
+}
+
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  color: #2767e9;
+  background-color: #f3f4f6;
+  outline-color: #2767e9;
+  outline-offset: 2px;
+  padding: 0px 0.5rem;
+}
+
+input[type="radio"]:checked {
+  /* background-color: #2767e9; */
+  border-color: #2767e9;
+  color: pink;
+  background: pink;
+}
+
+input[type="file"] {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 input[type="button"] {
-  background-color: rgba(255,255,255,1); /* Blue background color */
-  color: #333; /* White text color */
-  padding: 10px 15px; /* Padding around the button */
-  border: 1px solid rgba(255,255,255,.3); /* Remove border */
-  border-radius: 50px; /* Rounded corners */
+  /*background-color: rgba(255, 255, 255, 1);
+  color: #333;
+  padding: 10px 15px;
+  border: 1px solid #333;
+  border-radius: 50px;
   margin: 20px 20px;
   width: 50%;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
   margin-top: 20px;
+  */
+  padding: 0.625rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  background: #135beb;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: 0.2s;
+}
+
+input[type="button"]:hover {
+  color: white;
+  background: #124bc5;
 }
 
 form {
@@ -77,4 +181,105 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* file upload container */
+
+#file-upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#dropzone-file {
+  display: none;
+}
+
+#dropzone-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: #d1d5db;
+  border-style: dashed;
+  width: 100%;
+  padding: 1rem;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+#dropzone-label:hover {
+  background-color: #f3f4f6;
+}
+
+#dropzone-label div {
+  display: flex;
+  padding-top: 1.25rem;
+  padding-bottom: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#dropzone-label svg {
+  margin-bottom: 1rem;
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+}
+
+#dropzone-label p:nth-child(2) {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
+
+#dropzone-label p:nth-child(3) {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #6b7280;
+}
+
+#filenames {
+  margin-top: 10px;
+}
+
+#filenames .uploads {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  border-bottom: 1px solid #d1d5db;
+  padding: 10px 10px;
+}
+
+#filenames p {
+  font-size: 1rem;
+  /*elipsis*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+#filenames button {
+  color: black;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 1px solid #6b7280;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+#filenames button:hover {
+  color: #f9fafb;
+  background: lightcoral;
+  border: 1px solid lightcoral;
 }

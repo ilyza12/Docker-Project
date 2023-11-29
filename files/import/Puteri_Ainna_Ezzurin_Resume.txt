@@ -1,0 +1,124 @@
+PUTERI AINNA EZZURIN BINTI MOHD REZA
+COMPUTER SCIENCE INTERNSHIP
+Residensi Seri Pauh, 13700, Permatang Pauh
+ ainnaezzurin@gmail.com | (+60)11 58727057 
+EDUCATION
+BACHELOR OF COMPUTER SCIENCE (HONS.) | MAJOR IN DATA SCIENCE
+Multimedia University, Cyberjaya
+Current Semester : 2nd Semester in Year 2
+CGPA of 3.24 for last semester
+Faculty of Computing & Informatics (FCI)
+September 2021-Present
+DIPLOMA IN INFORMATION TECHNOLOGY
+Multimedia University, Cyberjaya
+Graduated with CGPA of 3.85
+Faculty of Computing & Informatics (FCI)
+July 2019 - June 2021
+COMPUTER SCIENCE STREAM
+High School Bukit Mertajam, Penang
+PT3 : 8A , 2B
+SPM : 1A+ , 2A , 2A- , 2B+ , and 2B
+Jan 2014 - Dec 2018
+PROFESSIONAL EXPERIENCE
+INARI TECHNOLOGY SDN. BHD.
+IT Intern  (IT Department)
+Provide ongoing support and maintenance for the existing system, ensuring its efficient
+and effective operation.
+Able to adapt to the company's preferred software and programming language
+Incorporate newly enhanced features and additional features into existing system
+Entrusted with a project that requires communication with real life client and was able
+to complete it within the given timeline.
+Work closely with other members in a team to develop the new website requested by
+client.
+Communicate with client and modify based on their preferences.
+Providing support for senior staff
+          - assist on the front end coding
+          - assist on small website functions
+March 2021 - June 2021
+BAYAN LEPAS, PULAU PINANG
+RELEVANT PROJECTS
+FACE MASK DETECTION
+Built a face mask detection algorithm that can detect weather the
+picture contains people wearing mask or no mask.
+PROGRAMMING SKILLS
+LANGUAGE
+Phyton, Machine Learning
+Trimester 1 Year 2
+2023
+ONLINE RENTAL SYSTEM
+Built an online Rental Management System in Cyberjaya for clients to
+search for properties to rent and for owner to rent their property.
+Java
+Trimester 2 Year 1
+2022
+Malay - native speaker
+English - Profficient
+HTML
+CSS
+PHP
+JavaScript
+BootStrap
+C
+C++
+Java
+MySql
+Phyton
+SOFTWARE KNOWLEDGE
+DEV C++
+Visual Studio Code
+Notepad++
+Xampp
+Microsoft Oficce
+IntelliJ IDE
+Adobe Photoshop
+Microsoft Access
+SQL Server Management
+Studio
+C#
+R
+D3
+PARCEL MANAGEMENT WEBSITE
+A website for parcel manaement for staff and courier service provider
+Allows the staff to manage parcel, generate report, view
+customer,manage courier
+Allows the courier to update the parcel that is assigned to them and
+email customers about their respective parcel detail.
+HTML, CSS, PHP, JavaScript, MySQL
+Trimester 1 Year 1
+2022
+R Studio
+Tableau
+RapidMiner
+MongoDB
+FreeMat
+Robo3T
+DBeaver
+FINAL YEAR PROJECT (Diploma)
+Salon website named Cantikkathome
+A website for the customers and beautician to connect online
+Equipt with online consultation and appointment booking features
+Users will be able to purchase beauty products from the website
+HTML, CSS, PHP, JavaScript, MySQL
+Trimester 2 Year 2
+2020
+EXTRACURRICULAR ACTIVITIES
+Badminton Workshop
+A wrokshop to teach about the basic for badminton sports and
+how to properly play without injuring our body.
+Trimester 3 Year 1
+2023
+TeamBuilding Program
+Participation in a teambuilding activity in Melaka 2019
+MMU Netball Team
+Participation in a netball team in MMU cyberjaya 2022
+ADDITIONAL INFO
+Driving License           Yes
+Industrial Training Coordinator
+Faculty of Computing & Informatics 
+Lecturer in MMU
+gktong@mmu.edu.my
+Own Transport           Yes
+Willing to travel          Yes
+Internship Period        17 July 2023 - 15 October 2023 
+REFERENCES
+MR. TONG GEE KOK
