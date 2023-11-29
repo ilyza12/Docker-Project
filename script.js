@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fileInput.addEventListener("change", () => {
     for (let i = 0; i < fileInput.files.length; i++) {
-      addFileNamesToDOM(fileInput.files[i].name);
+      const afterConvert = convertType[0].value === "pdf" ? "txt" : "pdf";
+      addFileNamesToDOM(fileInput.files[i].name.split(".")[0] + "." + afterConvert);
     }
   });
 });
@@ -18,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function addFileNamesToDOM(filename) {
   const container = document.createElement("div");
   container.classList.add("uploads");
+  container.setAttribute("data-filename", filename);
   const names = document.createElement("p");
   names.innerHTML = filename;
-  names.setAttribute("data-filename", filename);
 
   const removeBtn = document.createElement("button");
   removeBtn.classList.add("transition");
@@ -134,12 +135,22 @@ function logReponse(xhr) {
   // create links for each file
   files.map((file) => {
     const link = document.createElement("a");
-    link.innerHTML = file.filename;
+    link.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+</svg>`;
     link.href = "files/import/" + file.filename;
     link.download = file.filename;
 
-    const output = document.getElementById("outputlinks");
-    output.appendChild(link);
+    const filenamediv = document.querySelector(`[data-filename="${file.filename}"]`);
+    // remove the x button
+    filenamediv.lastChild.remove();
+    // add the link to the div
+    filenamediv.appendChild(link);
+
+    // const output = document.getElementById("outputlinks");
+    // output.appendChild(link);
   });
 
   // alert user that conversion is done
