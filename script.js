@@ -143,7 +143,6 @@ function enableUpload() {
 function logReponse(xhr) {
   // split response into filenames and status (success or error)
   const responses = xhr.responseText.split("\n").filter(Boolean);
-  responses.pop(); // remove last empty element
   const filenames = responses.map((response) => response.split(":")[0]);
   const status = responses.map((response) => response.split(":")[1]);
 
@@ -176,6 +175,12 @@ function logReponse(xhr) {
     filenamediv.classList.add("download");
     // remove the x button
     filenamediv.lastChild.remove();
+    //remove the old filename
+    filenamediv.lastChild.remove();
+    // add the new filename
+    let name = document.createElement('p');
+    name.innerHTML = file.filename;
+    filenamediv.appendChild(name);
     // add the link to the div
     filenamediv.appendChild(link);
   });
