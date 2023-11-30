@@ -12,22 +12,39 @@
   </head>
   <body>
     <!--box class is for the content box-->
-    <div class="box">
+    <div class="box" id = "box">
     <h1>File Converter</h1>
     <form id="fileForm" enctype="multipart/form-data">
       <div class="checkbox">
-        <input type="radio" name="converttype" value="pdf" id="type1" />
-        <label for="type1">Convert PDF to TXT</label>
-        <input type="radio" name="converttype" value="txt" id="type2" />
-        <label for="type2">Convert TXT to PDF</label>
+        <label for="type1" class = "radiocontainer transition">
+          <input type="radio" name="converttype" value="pdf" id="type1" checked/>
+          <p>Convert PDF to TXT</p>
+        </label>
+        <label for="type2" class = "radiocontainer transition">
+          <input type="radio" name="converttype" value="txt" id="type2" />
+          <p>Convert TXT to PDF</p>
+        </label>
       </div>
 
-      <input type="file" multiple name="file" id="file" />
-      <input type="button" name="submit" value="Upload" id="submit" />
+
+      <div id = "file-upload-container">
+        <label for="dropzone-file" id = "dropzone-label">
+          <div>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+              </svg>
+              <p><span class="font-semibold">Click to upload</span></p>
+              <p>Please select your desired converter before proceeding</p>
+          </div>
+          <input type="file" multiple name="file" id="dropzone-file" accept=".pdf,.txt"/>
+          <input type="button" name="submit" value="Upload" id="submit" title = "Upload files"/>
+      </label>
+      </div>
     </form>
 
-    <!-- section to show all the links -->
-    <div id="outputlinks"></div>
+
+    <!-- section to show the files -->
+    <div id = "filenames"></div>
   </body>
   <!-- script for functionalities -->
   <script src="script.js"></script>
