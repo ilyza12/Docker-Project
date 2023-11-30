@@ -20,6 +20,7 @@ body {
   backdrop-filter: blur(5px);
   background-size: cover;
   background-position: center;
+  padding: 1rem;
 }
 
 /* general classes */
