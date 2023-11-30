@@ -113,7 +113,7 @@ function startConvert(e) {
   for (var i = 0; i < file.length; i++) {
     formData.append("files[]", file[i]);
   }
-  console.log(formData.getAll("files[]"));
+  // console.log(formData.getAll("files[]"));
   formData.append("query", convertmode);
 
   xhr.send(formData);
@@ -155,7 +155,7 @@ function logReponse(xhr) {
 
   // create links for each file
   files.map((file) => {
-    console.log(file);
+    // console.log(file);
     const link = document.createElement("a");
     link.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -168,7 +168,6 @@ function logReponse(xhr) {
 
     const filename = file.filename.split(".")[0];
     const oldconvertmode = file.filename.split(".")[1] === "pdf" ? "txt" : "pdf";
-    console.log(filename + "." + oldconvertmode);
 
     const filenamediv = document.querySelector(
       `[data-filename="${filename + "." + oldconvertmode}"]`
@@ -182,6 +181,6 @@ function logReponse(xhr) {
   });
 
   // alert user that conversion is done
-  console.log(files);
+  // console.log(files);
   // alert("done");
 }
