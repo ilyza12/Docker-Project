@@ -17,7 +17,7 @@ To run this project, your will need to follow the below instruction:
 docker build -t pdftxt .
 
 #running the container
-docker run -dit --name pdftxt -p 8080:80 pdftxt
+docker run -dit --name pdftxt -p 8000:80 pdftxt
 
 ```
 4. Docker will start to build the image and run the container. You can check if the container is running using this command.
