@@ -18,6 +18,9 @@ ENV PATH $JAVA_HOME/bin:$PATH
 # Create export folder
 RUN mkdir -p /var/www/html/files/export 
 
+# Create import folder
+RUN mkdir -p /var/www/html/files/import
+
 
 # Copy the contents of the current directory into the container
 COPY . /var/www/html/

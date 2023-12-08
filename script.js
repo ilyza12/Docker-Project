@@ -25,7 +25,7 @@ function addFileNamesToDOM(filename) {
   // create a div for the filename and add it to the DOM
   const container = document.createElement("div");
   container.classList.add("uploads");
-  container.setAttribute("data-filename", filename);
+  container.setAttribute("id", filename);
 
   // create a p tag for the filename and add it to the div
   const names = document.createElement("p");
@@ -58,7 +58,7 @@ function removeFile(filename) {
   fileinput.files = dataTransfer.files;
 
   // remove the file container from DOM
-  const container = document.querySelector(`[data-filename="${filename}"]`);
+  const container = document.getElementById(filename);
   container.remove();
 }
 
@@ -141,14 +141,20 @@ function enableUpload() {
 }
 
 function logReponse(xhr) {
+  const formats = ["pdf", "txt"];
   // split response into filenames and status (success or error)
   const responses = xhr.responseText.split("\n").filter(Boolean);
-  const filenames = responses.map((response) => response.split(":")[0]);
-  const status = responses.map((response) => response.split(":")[1]);
+  const filenames = responses
+    .map(
+      // if found the format name in the response, return the filename
+      (response) => (formats.some((format) => response.includes(format)) ? response : null)
+    )
+    .filter(Boolean);
+  const status = filenames.map((filename) => filename.split(" ")[1]);
 
   // merge filenames and status into an object
   const files = filenames.map((filename, index) => ({
-    filename,
+    filename: filename.split(":")[0],
     status: status[index],
   }));
 
@@ -157,20 +163,18 @@ function logReponse(xhr) {
     // console.log(file);
     const link = document.createElement("a");
     link.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
-</svg>`;
-    link.href = "files/import/" + file.filename;
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>`;
+    link.href = "files/import/" + file.filename.split(":")[0];
     link.download = file.filename;
     link.setAttribute("title", "Download file");
 
-    const filename = file.filename.split(".")[0];
-    const oldconvertmode = file.filename.split(".")[1] === "pdf" ? "txt" : "pdf";
+    const filename = file.filename;
+    const oldconvertmode = filename.split(".")[1] === "pdf" ? "txt" : "pdf";
+    const filenamediv = document.getElementById(filename.split(".")[0] + "." + oldconvertmode);
 
-    const filenamediv = document.querySelector(
-      `[data-filename="${filename + "." + oldconvertmode}"]`
-    );
     // add the download class to show that it is downloadable
     filenamediv.classList.add("download");
     // remove the x button
@@ -178,7 +182,7 @@ function logReponse(xhr) {
     //remove the old filename
     filenamediv.lastChild.remove();
     // add the new filename
-    let name = document.createElement('p');
+    const name = document.createElement("p");
     name.innerHTML = file.filename;
     filenamediv.appendChild(name);
     // add the link to the div
