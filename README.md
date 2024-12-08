@@ -46,3 +46,14 @@ docker stop pdftxt
 ├── script.js
 └── style.css
 ```
+
+## Credits
+
+This project is a group work. 
+
+Members involved:
+1. Shereen Ilyza (me)
+2. Norhazira
+3. Muhammad Ammar
+4. Harith Fathi
+5. Muhammad Danish Aiman
